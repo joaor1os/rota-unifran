@@ -1,5 +1,5 @@
 from flask import Flask
-app = Flask('app')
+app = Flask('__name__')
 
 @app.route('/')
 def hello_world():
@@ -9,4 +9,5 @@ def hello_world():
 def unifran():
   return '<h2>Universidade de Franca</h2>'
 
-app.run(host='0.0.0.0', port=8080)
+if __name__ == '__main__':
+  app.run(host='0.0.0.0')
